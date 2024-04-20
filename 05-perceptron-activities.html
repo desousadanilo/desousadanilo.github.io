@@ -57,7 +57,7 @@
     <div class="hero-content display-table">
       <div class="table-cell">
         <div class="container">
-          <h2 class="hero-title mb-4">Correlation and Regression</h2>
+          <h2 class="hero-title mb-4">Activation Functions</h2>
 
         </div>
       </div>
@@ -70,16 +70,72 @@
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
 
-        <div> 
-          <div class="col-lg-12">
-             
-            <br class="portfolio-description">
-            <h2>The impact of industry 4.0 on Agriculture</h2>
-             
-          </div>
-        </div>
+        <div>
 
-      </div>
+
+
+          <div class="col-lg-12">
+
+            <div class="portfolio-description">
+
+
+              <p>Activation functions in neural networks are crucial components that introduce nonlinearity into the
+                network, allowing it to learn complex patterns and relationships in data. They are applied to the output
+                of each neuron in a neural network, transforming the input signal into the neuron's output.</p>
+              <p>Here are some common activation functions:</p>
+              <ul>
+                <li><strong>Sigmoid Function (Logistic)</strong>: Smooth, continuous function that compresses the input
+                  into a range between 0 and 1. It is useful in the output layer of binary classification tasks, but
+                  presents problems of vanishing gradients for deep networks.</li>
+                <li>
+
+                  <strong>Hyperbolic Tangent Function (tanh)</strong>: Similar to the sigmoid function, but with an
+                  output range between -1 and 1, which centers the output around zero. It suffers from the evanescent
+                  gradient problem similar to the sigmoid function.
+                </li>
+                <li>
+                  <strong>Rectified Linear Unit (ReLU)</strong>: Simple and computationally efficient. It replaces all
+                  negative entries with zero, leaving positive entries unchanged. ReLU has become the default activation
+                  function for many deep learning applications.
+                </li>
+                <li>
+                  <strong>Leaky ReLU</strong>: A variation of ReLU that allows a small, non-zero gradient when the input
+                  is negative, solving the problem of "dying ReLU" where neurons can get stuck during training if they
+                  always output zero.
+                </li>
+                <li>
+                  <strong>Parametric ReLU (PReLU)</strong>: Similar to Leaky ReLU, but the bias for negative values is
+                  learned during training.
+                </li>
+                <li>
+                  <strong>Exponential Linear Unit (ELU)</strong>: Similar to ReLU, but allows negative values with
+                  exponential decay.
+                </li>
+                <li>
+                  <strong>Softmax function</strong>: Typically used in the output layer for multi-class classification
+                  tasks. It normalizes the output into a multi-class probability distribution.
+                </li> 
+              </ul> 
+              <p>
+                Each activation function has its advantages and disadvantages, and the choice often depends on the
+                specific problem, the network architecture, and empirical testing to determine which one performs best
+                for a specific task.
+
+              </p>  
+              <br></br>
+              <p>
+
+                <b> References</b>
+              </p>
+              <p>
+                Sharma, S., Sharma, S. & Athaiya, A. (2020) Activation Funcions in Neural Networks. <i>International Journal of Engineering Applied Sciences and Technology</i> 4(12):310-316. Available from: https://www.ijeast.com/papers/310-316,Tesma412,IJEAST.pdf [Accessed 20 March 2024]
+              </p>
+
+
+            </div>
+          </div>
+
+        </div>
 
       </div>
     </section><!-- End Portfolio Details Section -->

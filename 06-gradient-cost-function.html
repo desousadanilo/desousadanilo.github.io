@@ -57,7 +57,7 @@
     <div class="hero-content display-table">
       <div class="table-cell">
         <div class="container">
-          <h2 class="hero-title mb-4">Correlation and Regression</h2>
+          <h2 class="hero-title mb-4">Cost Functions, Gradient Descent and  Learning Rate</h2>
 
         </div>
       </div>
@@ -70,16 +70,68 @@
     <section id="portfolio-details" class="portfolio-details">
       <div class="container">
 
-        <div> 
+        <div>
+
+
+
           <div class="col-lg-12">
              
-            <br class="portfolio-description">
-            <h2>The impact of industry 4.0 on Agriculture</h2>
-             
-          </div>
-        </div>
+            <div class="portfolio-description">
+               
 
-      </div>
+              <p>In an artificial neural network (ANN), the cost function quantifies how well the network's predictions match the true values in the training data. Gradient descent, along with a learning rate, is a common optimization algorithm used to minimize this cost function during the training process.
+              </p>
+<p>Here's how the cost function and gradient descent with a learning rate work in the context of training an ANN:
+</p>
+   
+              <ul>
+                <li> <strong>Cost Function:</strong>
+                  The cost functio  measures the discrepancy between the network's predictions and the actual target values. It's typically defined based on the task at hand. For example, in regression problems, it could be mean squared error, and in classification tasks, it could be cross-entropy loss.</li>
+                <li><strong>Gradient Descent:</strong> Gradient descent is an iterative optimization algorithm used to minimize the cost function by adjusting the parameters (weights and biases) of the network.
+                  At each iteration (or epoch) of training, the gradients of the cost function with respect to the parameters are computed using techniques like backpropagation.
+                  The parameters are then updated in the opposite direction of the gradients to decrease the value of the cost function. </li>
+                <li><strong>Learning Rate</strong>The learning rate controls the step size during gradient descent. It's a crucial hyperparameter that needs to be carefully chosen.
+                  If the learning rate is too small, the optimization process may be slow, requiring many iterations to converge to the optimal solution.
+                  If the learning rate is too large, the optimization process may oscillate or diverge, leading to instability or overshooting the optimal solution.
+                  Typically, the learning rate is adjusted during training, either manually or automatically (e.g., using learning rate schedules or adaptive methods like Adam).</li>
+              </ul>
+
+               
+
+            
+
+              <p>
+                In summary, during training, the cost function quantifies the network's performance, and gradient descent with a learning rate adjusts the parameters of the network to minimize this cost function, thereby improving the network's predictive accuracy.
+
+
+              </p>
+               
+
+              <br></br>
+              <p>
+
+                <b> References</b>
+              </p>
+               
+
+              <p>
+                Nacson, M. S., Srebro, N. & Soudry, D.(2019) Stochastic Gradient Descent on Separable Data: Exact
+                Convergence with a Fixed Learning Rate. <i>Proceedings of the Twenty-Second International Conference on
+                  Artificial Intelligence and Statistics, PMLR </i> 89(1):3051-3059. Available from:
+                https://proceedings.mlr.press/v89/nacson19a.html [Accessed 21 March 2024]
+              </p>
+              <p>
+                Haji, S. H. & Abdulazeez, A. M. (2021) COMPARISON OF OPTIMIZATION TECHNIQUES BASED ON GRADIENT DESCENT
+                ALGORITHM <i>A REVIEW. PalArch’s Journal of Archaeology of Egypt / Egyptology</i> 18(4): 2715-2743
+                Available from: https://archives.palarch.nl/index.php/jae/article/view/6705 [Accessed 21 March 2024]
+              </p>
+
+
+
+            </div>
+          </div>
+
+        </div>
 
       </div>
     </section><!-- End Portfolio Details Section -->
