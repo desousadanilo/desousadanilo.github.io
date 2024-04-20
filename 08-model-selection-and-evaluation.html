@@ -57,7 +57,7 @@
     <div class="hero-content display-table">
       <div class="table-cell">
         <div class="container">
-          <h2 class="hero-title mb-4">Model Selection and Evaluation.html</h2>
+          <h2 class="hero-title mb-4">Model Evaluation</h2>
 
         </div>
       </div>
@@ -75,174 +75,90 @@
 
 
           <div class="col-lg-12">
-            <div class="portfolio-info">
-              <h3>Learning Outcomes</h3>
 
-             
-              <ul>
-                <li> Articulate the legal, social, ethical and professional issues faced by machine learning professionals. </li>
-                <li> Understand the applicability and challenges associated with different datasets for the use of machine learning algorithms. </li>
-              </ul>
-          
-            </div>
             <div class="portfolio-description">
-              <table class="table table-bordered" id="deadlinedetails">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>Fever</th>
-                    <th>Cough</th>
-                    <th>Test-1</th>
-                    <th>Test-2</th>
-                    <th>Test-3</th>
-                    <th>Test-4</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Jack</td>
-                    <td>M</td>
-                    <td>Y</td>
-                    <td>N</td>
-                    <td>P</td>
-                    <td>N</td>
-                    <td>N</td>
-                    <td>A</td>
 
-                  </tr>
-                  <tr>
-                    <td>Mary</td>
-                    <td>F</td>
-                    <td>Y</td>
-                    <td>N</td>
-                    <td>P</td>
-                    <td>A</td>
-                    <td>P</td>
-                    <td>N</td>
-                  </tr>
 
-                  <tr>
-                    <td>Jim</td>
-                    <td>M</td>
-                    <td>Y</td>
-                    <td>P</td>
-                    <td>N</td>
-                    <td>N</td>
-                    <td>N</td>
-                    <td>A</td>
-                  </tr>
-                </tbody>
-              </table>
+               Model evaluation for both Artificial Neural Networks (ANNs) and Convolutional Neural Networks (CNNs)
+                involves several steps to assess their performance and generalization ability.
 
-              <p>Calculate Jaccard coefficient for the following pairs: </p>
-              <ul>
-                <li>(Jack, Mary)</li>
-                <li>(Jack, Jim)</li>
-                <li>(Jim, Mary)</li>
-              </ul>
 
-              <p>To calculate the Jaccard coefficient, we first convert the asymmetric variables to binary values and
-                re-write the table. Since Gender is a symmetric variable (that is, male, female have the same weight),
-                it is not converted. <br></p>
+                </p>
+                <p>
+                  The dataset is typically split into training, validation, and test sets. The training set is used to
+                  train the model, the validation set is used for hyperparameter tuning and model selection, and the
+                  test set is used for final evaluation.
+                  In some cases, techniques like cross-validation may be used for more reliable evaluation, especially
+                  if the dataset is small.
 
-                <p>So let
-                  <strong><em>Y&nbsp;&amp;&nbsp;P</em></strong>&nbsp;=&nbsp;1;&nbsp;<em><strong>N&nbsp;&amp;&nbsp;A</strong></em>&nbsp;=&nbsp;0
-                </p> 
-              <p>
-              <table class="table table-bordered" id="deadlinedetails">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>Fever</th>
-                    <th>Cough</th>
-                    <th>Test-1</th>
-                    <th>Test-2</th>
-                    <th>Test-3</th>
-                    <th>Test-4</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Jack</td>
-                    <td>M</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-
-                  </tr>
-                  <tr>
-                    <td>Mary</td>
-                    <td>F</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                  </tr>
-
-                  <tr>
-                    <td>Jim</td>
-                    <td>M</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              </p>
-
-            
-
-              <p>
-                So, Jaccard Coefficient for these attributes is calculated by the following equation (Karabiber, 2024): 
-                <br>
-                <strong><i>d(i,j) = (b + c) / (a + b + c)</i></strong>
-              </p>
-              <p>
-                where
+                </p>
+                <p>
+                  Evaluate both ANN and CNN models using the test set. Calculate various performance such as: <br>
                 <ul>
-                  <li><strong><i>a</i></strong>  = the number of attributes that equal <i>1</i> for both objects an <i>i</i> and <i>j</i>.</li>
-                  <li><strong> <i>b</i></strong> = the number of attributes that equal <i>0</i>  for object <i>i</i>  but equal <i>1</i> 
-                for object <i>j</i> </li>
-                <li> <strong> <i>c</i></strong> = the number of attributes that equal <i>1</i> 
-                for object <i>i</i>   but equal <i>0</i>   for object <i>j</i></li>
-                <li> <strong> <i>d</i></strong> = the number of attributes that equal <i>0</i>  for both objects  <i>i</i> and <i>j</i> . </li>
-              </ul>
-              </p> 
+                  <li> <strong>
+                      Classification Tasks: </strong>
+                    <ul>
+                      <li>
+                        Accuracy: Proportion of correctly classified samples.
+                      </li>
+                      <li>Precision: Ratio of correctly predicted positive observations to the total predicted
+                        positives.
+                      </li>
+                      <li>Recall (Sensitivity): Ratio of correctly predicted positive observations to the all
+                        observations in actual class.
+                      </li>
+                      <li>F1-score: Harmonic mean of precision and recall.
+                      </li>
+                      <li>Confusion Matrix: Tabulates true positives, true negatives, false positives, and false
+                        negatives.
+                      </li>
+                      <li>ROC curve and AUC-ROC: Receiver Operating Characteristic curve and Area Under the ROC Curve,
+                        useful for binary classification tasks.
+                      </li>
+                    </ul>
+                  </li>
+                  <li> <strong>
+                      Regression Tasks:</strong>
+                    <ul>
+                      <li>
+                        Mean Squared Error (MSE): Average squared difference between predicted and actual values.
+                      </li>
+                      <li> Mean Absolute Error (MAE): Average absolute difference between predicted and actual
+                      values.
+                    </li>
+                  </li>
+                  <li> R-squared: Proportion of the variance in the dependent variable that is predictable from the
+                    independent variables.
+                  </li>
+                </ul>
+                </li>
+                </p>
+                <p>
+                  Visualizing model performance using confusion matrices, learning curves, ROC curves, or
+                  precision-recall curves can provide deeper insights into the model's behavior.
 
-              <p> The final answers should be:</p>
-              <ul>
-                <li>(Jack, Mary) = 0.33</li>
-                <li>(Jack, Jim) = 0.67</li>
-                <li>(Jim, Mary) = 0.75</li>
-              </ul>
-              <p>
-                Based on these measurements, it appears unlikely that Jim and Mary have a similar disease, as they
-                exhibit the highest dissimilarity value among the three pairs. Among the three patients, Jack and Mary
-                are the most likely to have a similar disease.
+                </p>
+                <p>
+                  Understanding the model's predictions and decision-making process is essential, especially in critical
+                  applications. Techniques like feature importance analysis or activation maximization can help in
+                  interpreting ANN and CNN models.
+                  Overall, while the principles of model selection and evaluation remain largely similar between ANNs
+                  and CNNs, the specific techniques and considerations may vary based on the characteristics of each
+                  architecture and the nature of the problem being addressed.</p>
+                </p>
 
-              </p>
+                <br></br>
+                <p>
 
-              <br></br>
-              <p>
+                  <b>References</b>
+                </p>
+                <p>
+                  Bhosle, K. & Musande, V.(2019)  Evaluation of Deep Learning CNN Model for Land Use Land Cover Classification and Crop Identification Using Hyperspectral Remote Sensing Images.  <i>Journal of the Indian Society of Remote Sensing</i> 47(1):1949–1958. DOI: https://doi.org/10.1007/s12524-019-01041-2
+                </p>
+                <p>
+                  Taspinar, Y. S., Cinar,I & Koklu,M. (2022) Classification by a stacking model using CNN features for COVID-19 infection diagnosis. <i>Journal of X-Ray Science and Technology </i>30(1):73-88 . DOI: https://doi.org/10.3233/XST-211031
 
-                <b> References</b>
-              </p>
-              <p>
-                Karabiber, F. (2024) Jaccard Similarity. Available from:
-                https://www.sciencedirect.com/topics/computer-science/binary-attribute
-                [Accessed 6 March 2024]
-              </p>
+                </p>
 
 
             </div>
