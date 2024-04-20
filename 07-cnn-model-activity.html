@@ -57,7 +57,7 @@
     <div class="hero-content display-table">
       <div class="table-cell">
         <div class="container">
-          <h2 class="hero-title mb-4">CNN Model Activity</h2>
+          <h2 class="hero-title mb-4">Convolutional neural network Model</h2>
 
         </div>
       </div>
@@ -75,163 +75,41 @@
 
 
           <div class="col-lg-12">
-            <div class="portfolio-info">
-              <h3>Learning Outcomes</h3>
-
              
-              <ul>
-                <li> Articulate the legal, social, ethical and professional issues faced by machine learning professionals. </li>
-                <li> Understand the applicability and challenges associated with different datasets for the use of machine learning algorithms. </li>
-              </ul>
-          
-            </div>
             <div class="portfolio-description">
-              <table class="table table-bordered" id="deadlinedetails">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>Fever</th>
-                    <th>Cough</th>
-                    <th>Test-1</th>
-                    <th>Test-2</th>
-                    <th>Test-3</th>
-                    <th>Test-4</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Jack</td>
-                    <td>M</td>
-                    <td>Y</td>
-                    <td>N</td>
-                    <td>P</td>
-                    <td>N</td>
-                    <td>N</td>
-                    <td>A</td>
+               
 
-                  </tr>
-                  <tr>
-                    <td>Mary</td>
-                    <td>F</td>
-                    <td>Y</td>
-                    <td>N</td>
-                    <td>P</td>
-                    <td>A</td>
-                    <td>P</td>
-                    <td>N</td>
-                  </tr>
-
-                  <tr>
-                    <td>Jim</td>
-                    <td>M</td>
-                    <td>Y</td>
-                    <td>P</td>
-                    <td>N</td>
-                    <td>N</td>
-                    <td>N</td>
-                    <td>A</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <p>Calculate Jaccard coefficient for the following pairs: </p>
+              <p>Convolutional Neural Networks (CNNs) are a class of deep neural networks primarily used for analyzing visual imagery. They are designed to automatically and adaptively learn spatial hierarchies of features from input images through a process called convolution. </p>
+              <p>Key components and concepts of CNNs include:</p>
               <ul>
-                <li>(Jack, Mary)</li>
-                <li>(Jack, Jim)</li>
-                <li>(Jim, Mary)</li>
+                <li> <strong> Convolutional Layers:</strong>
+                  These layers apply convolution operations to the input image. Convolution involves sliding a small matrix called a filter or kernel over the input image and computing the dot product between the filter and the local region of the image it is currently positioned on.
+                  The output of this operation is called a feature map, which represents the presence of different features in the input image.</li>
+                  <li> <strong>Pooling Layers:</strong>
+                    Pooling layers downsample the feature maps produced by the convolutional layers. Common pooling operations include max pooling and average pooling, which reduce the spatial dimensions of the feature maps while retaining the most important information.
+                    Pooling helps in reducing computational complexity, controlling overfitting, and providing translation invariance.
+                    /li> 
+                    <li> <strong>Activation Functions:</strong>
+                    Activation functions like ReLU (Rectified Linear Unit) are typically applied after the convolutional and pooling layers to introduce non-linearity into the network and enable it to learn complex patterns.
+                    /li> 
+                    <li> <strong>Fully Connected Layers:</strong>
+                    After several convolutional and pooling layers, CNNs often have one or more fully connected layers, similar to traditional neural networks.
+                    These layers perform classification based on the features extracted by the convolutional layers.
+                    /li> 
+                    <li> <strong>Training with Backpropagation:</strong>
+                    CNNs are trained using backpropagation, where the gradients of a loss function with respect to the network's parameters (weights and biases) are computed and used to update these parameters.
+                    Training data typically consists of pairs of input images and their corresponding labels. The network learns to minimize a loss function (e.g., cross-entropy loss for classification tasks) by adjusting its parameters.
+                    /li> 
+                    <li> <strong>Transfer Learning:</strong>
+                    CNNs trained on large datasets such as ImageNet can be repurposed for other tasks through transfer learning. In transfer learning, the pre-trained CNN is used as a feature extractor, and only the final layers (or some portion of the network) are fine-tuned on a smaller dataset relevant to the new task.
+                    </li> 
               </ul>
 
-              <p>To calculate the Jaccard coefficient, we first convert the asymmetric variables to binary values and
-                re-write the table. Since Gender is a symmetric variable (that is, male, female have the same weight),
-                it is not converted. <br></p>
-
-                <p>So let
-                  <strong><em>Y&nbsp;&amp;&nbsp;P</em></strong>&nbsp;=&nbsp;1;&nbsp;<em><strong>N&nbsp;&amp;&nbsp;A</strong></em>&nbsp;=&nbsp;0
-                </p> 
-              <p>
-              <table class="table table-bordered" id="deadlinedetails">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>Fever</th>
-                    <th>Cough</th>
-                    <th>Test-1</th>
-                    <th>Test-2</th>
-                    <th>Test-3</th>
-                    <th>Test-4</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Jack</td>
-                    <td>M</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-
-                  </tr>
-                  <tr>
-                    <td>Mary</td>
-                    <td>F</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>0</td>
-                  </tr>
-
-                  <tr>
-                    <td>Jim</td>
-                    <td>M</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td>0</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              </p>
+                
 
             
 
-              <p>
-                So, Jaccard Coefficient for these attributes is calculated by the following equation (Karabiber, 2024): 
-                <br>
-                <strong><i>d(i,j) = (b + c) / (a + b + c)</i></strong>
-              </p>
-              <p>
-                where
-                <ul>
-                  <li><strong><i>a</i></strong>  = the number of attributes that equal <i>1</i> for both objects an <i>i</i> and <i>j</i>.</li>
-                  <li><strong> <i>b</i></strong> = the number of attributes that equal <i>0</i>  for object <i>i</i>  but equal <i>1</i> 
-                for object <i>j</i> </li>
-                <li> <strong> <i>c</i></strong> = the number of attributes that equal <i>1</i> 
-                for object <i>i</i>   but equal <i>0</i>   for object <i>j</i></li>
-                <li> <strong> <i>d</i></strong> = the number of attributes that equal <i>0</i>  for both objects  <i>i</i> and <i>j</i> . </li>
-              </ul>
-              </p> 
-
-              <p> The final answers should be:</p>
-              <ul>
-                <li>(Jack, Mary) = 0.33</li>
-                <li>(Jack, Jim) = 0.67</li>
-                <li>(Jim, Mary) = 0.75</li>
-              </ul>
-              <p>
-                Based on these measurements, it appears unlikely that Jim and Mary have a similar disease, as they
-                exhibit the highest dissimilarity value among the three pairs. Among the three patients, Jack and Mary
-                are the most likely to have a similar disease.
-
-              </p>
+               
 
               <br></br>
               <p>
@@ -239,11 +117,11 @@
                 <b> References</b>
               </p>
               <p>
-                Karabiber, F. (2024) Jaccard Similarity. Available from:
-                https://www.sciencedirect.com/topics/computer-science/binary-attribute
-                [Accessed 6 March 2024]
+                Indolia, S., Goswami, A. K., Mishra, S.P.  & Asopa, P.(2018) Conceptual Understanding of Convolutional Neural Network- A Deep Learning Approach. <i> Procedia Computer Science</i> 132(1):679-688. DOI: https://doi.org/10.1016/j.procs.2018.05.069
               </p>
-
+              <p>
+                O’Shea, K. & Nash, R. (2015) An Introduction to Convolutional Neural Networks. Available from: https://arxiv.org/abs/1511.08458  [Accessed 24 March 2024]
+                </p>
 
             </div>
           </div>
