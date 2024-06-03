@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title> e-Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: DevFolio
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top" style="background-color: black;">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">Danilo De Sousa</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="./index.html">Home</a></li>
+          <!-- 
+          <li><a class="nav-link scrollto" href="./index.html#about">About</a></li> 
+         
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="#work">Work</a></li>
+          <li><a class="nav-link scrollto " href="#blog">Blog</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>
+          
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          -->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <div class="hero hero-single route bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
+    <div class="overlay-mf"></div>
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="hero-title mb-4">Collaborative Discussion<p>Creating Agent Dialogues</p>
+          </h2>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div>
+          <div class="col-lg-12">
+
+            <br class="portfolio-description">
+            <h2>Creating Agent Dialogues</h2>
+            <p>
+              Activity Guidance
+            </p>
+            <p>
+              Create an agent dialogue, using KQML and KIF, between two agents (named Alice and Bob).
+            </p>
+            <p>
+              Alice is an agent designed to procure stock and Bob is an agent that controls the stock levels for a
+              warehouse. This dialogue should see Alice asking Bob about the available stock of 50 inch televisions, and
+              also querying the number of HDMI slots the televisions have.
+            </p>
+            <p>
+
+            </p>
+
+            <p>
+
+              <ul>Alice: Stock Procurement Agent</ul>
+              <ul>Bob: Warehouse Stock Control Agent</ul>
+              <ul>Dialogue: </ul>
+              <ul><b>1. Alice to Bob:</b></ul> 
+              <ul>KQML: </ul>
+              <code>
+                <pre>
+          (ask-if 
+              :sender Alice 
+              :receiver Bob
+              :reply-with  Q001
+              :language KQML 
+              :ontology warehouse-inventory
+              :content ((item television) (size 50) )
+          ) 
+              </pre>
+              </code> 
+              <ul> KIF: <code>((isa ?item television) (= (size ?item) 50))</code></ul>
+              <ul>Meaning: Alice asks Bob if there are any televisions (item) of size 50 inches available in the warehouse inventory.</ul>
+            </p>
+            <p>
+              <ul><b>2. Bob response to Alice</b></ul> 
+              <ul>KQML: </ul>
+              <code>
+                <pre>
+            (reply 
+                :sender Bob 
+                :receiver Alice
+                :in-reply-to  Q001
+                :language KQML :ontology warehouse-inventory
+                :content (and (item television) (size 50) (quantity 10))
+            )
+                </pre>
+              </code> 
+              <ul>Meaning: Bob confirms there are televisions (item) of size 50 inches available (quantity 10) in the warehouse</ul>
+            </p>
+            <p>
+              <ul><b>3. Alice inquires about features</b></ul> 
+              <ul>KQML: </ul>
+              <code>
+                <pre>
+            (ask-if 
+                :sender Alice :receiver Bob
+                :in-reply-to Q001
+                :language KQML :ontology television-features
+                :content (and (item television) (size 50) (has-feature hdmi))
+            )
+                </pre>
+              </code>
+              <ul> KIF: <code> (and (isa ?item television) (= (size ?item) 50) (has-feature ?item hdmi))</code></ul>
+              <ul>Meaning: Alice asks Bob if the 50-inch televisions (item) have an HDMI feature (has-feature hdmi).</ul>
+            </p>
+            <p>
+              <ul><b>4. Bob responds with feature information</b></ul> 
+              <ul>KQML: </ul>
+              <code>
+                <pre>
+            (reply 
+                :sender Bob 
+                :receiver Alice
+                :in-reply-to Q001
+                :language KQML :ontology television-features
+                :content (and (item television) (size 50) (has-feature hdmi) (number-of-hdmi 2))
+            )
+                </pre>
+              </code>
+              <ul> KIF: <code> (and (isa ?item television) (= (size ?item) 50) (has-feature ?item hdmi) (= (number-of-hdmi ?item) 2))</code></ul>
+              <ul>Meaning: Bob confirms the 50-inch televisions (item) have an HDMI feature (has-feature hdmi) and have 2 HDMI slots (number-of-hdmi 2)</ul>
+            </p>
+
+            <p>
+              This dialogue demonstrates how KQML and KIF can be used for communication between agents. Alice uses KQML performatives to ask questions and Bob replies with relevant information using KIF expressions within the specified ontology.  
+
+            </p>
+
+            <p>
+
+              <b> References</b>
+              <p>
+              Finin, T., Fritzson, R.,  McKay, D. & McEntire, R. (1994) KQML- A Language and Protocol for Knowledge and Information Exchange. Available from: https://cdn.aaai.org/Workshops/1994/WS-94-02/WS94-02-007.pdf  [Accessed 14 May 2024] 
+            </p>
+            <p>
+                Liu, K., Luo, Y., & Davis, D. (2000). A Multi-Agent Framework for Stock Trading. In Proceedings of Conference on Intelligent Information Processing, 16 th World Computing Conference. Available from: https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=d08b88061fb7154bd92081d744833529fb1ed276 [Accessed 14 May 2024]  
+
+            </p>
+            </p>
+            <p>
+
+            </p>
+            <p>
+
+            </p>
+            <p>
+
+            </p>
+            <p>
+
+            </p>
+
+
+          </div>
+        </div>
+
+      </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>DevFolio</strong>. All Rights Reserved</p>
+            <div class="credits">
+              <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
+            -->
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
