@@ -82,7 +82,7 @@
     <div class="hero-content display-table">
       <div class="table-cell">
         <div class="container">
-          <h2 class="hero-title mb-4">Collaborative Discussion<p>Creating Agent Dialogues</p>
+          <h2 class="hero-title mb-4">Collaborative Discussion<p>Ethical impact of deep learning models</p>
           </h2>
 
         </div>
@@ -100,133 +100,59 @@
           <div class="col-lg-12">
 
             <br class="portfolio-description">
-            <h2>Creating Agent Dialogues</h2>
+            <h2>Ethical impact of deep learning models</h2>
             <p>
-              Activity Guidance
+              The advent of deep learning models capable of generating new content, such as DALL-E for images and
+              ChatGPT for prose, has revolutionized creative processes and automated content generation. While these
+              technologies offer enormous potential, they also raise significant ethical questions that need to be
+              carefully considered.
             </p>
             <p>
-              Create an agent dialogue, using KQML and KIF, between two agents (named Alice and Bob).
-            </p>
-            <p>
-              Alice is an agent designed to procure stock and Bob is an agent that controls the stock levels for a
-              warehouse. This dialogue should see Alice asking Bob about the available stock of 50 inch televisions, and
-              also querying the number of HDMI slots the televisions have.
-            </p>
-            <p>
-
-            </p>
-
-            <p>
-
-            <ul>Alice: Stock Procurement Agent</ul>
-            <ul>Bob: Warehouse Stock Control Agent</ul>
-            <ul>Dialogue: </ul>
-            <ul><b>1. Alice to Bob:</b></ul>
-            <ul>KQML: </ul>
-            <code>
-                <pre>
-          (ask-if 
-              :sender Alice 
-              :receiver Bob
-              :reply-with  Q001
-              :language KQML 
-              :ontology warehouse-inventory
-              :content ((item television) (size 50) )
-          ) 
-              </pre>
-              </code>
-            <ul> KIF: <code>((isa ?item television) (= (size ?item) 50))</code></ul>
-            <ul>Meaning: Alice asks Bob if there are any televisions (item) of size 50 inches available in the warehouse
-              inventory.</ul>
-            </p>
-            <p>
-            <ul><b>2. Bob response to Alice</b></ul>
-            <ul>KQML: </ul>
-            <code>
-                <pre>
-            (reply 
-                :sender Bob 
-                :receiver Alice
-                :in-reply-to  Q001
-                :language KQML :ontology warehouse-inventory
-                :content (and (item television) (size 50) (quantity 10))
-            )
-                </pre>
-              </code>
-            <ul>Meaning: Bob confirms there are televisions (item) of size 50 inches available (quantity 10) in the
-              warehouse</ul>
-            </p>
-            <p>
-            <ul><b>3. Alice inquires about features</b></ul>
-            <ul>KQML: </ul>
-            <code>
-                <pre>
-            (ask-if 
-                :sender Alice :receiver Bob
-                :in-reply-to Q001
-                :language KQML :ontology television-features
-                :content (and (item television) (size 50) (has-feature hdmi))
-            )
-                </pre>
-              </code>
-            <ul> KIF: <code> (and (isa ?item television) (= (size ?item) 50) (has-feature ?item hdmi))</code></ul>
-            <ul>Meaning: Alice asks Bob if the 50-inch televisions (item) have an HDMI feature (has-feature hdmi).</ul>
-            </p>
-            <p>
-            <ul><b>4. Bob responds with feature information</b></ul>
-            <ul>KQML: </ul>
-            <code>
-                <pre>
-            (reply 
-                :sender Bob 
-                :receiver Alice
-                :in-reply-to Q001
-                :language KQML :ontology television-features
-                :content (and (item television) (size 50) (has-feature hdmi) (number-of-hdmi 2))
-            )
-                </pre>
-              </code>
-            <ul> KIF:
-              <code> (and (isa ?item television) (= (size ?item) 50) (has-feature ?item hdmi) (= (number-of-hdmi ?item) 2))</code>
-            </ul>
-            <ul>Meaning: Bob confirms the 50-inch televisions (item) have an HDMI feature (has-feature hdmi) and have 2
-              HDMI slots (number-of-hdmi 2)</ul>
+              An important ethical issue is that bias and fairness are significant ethical considerations. Deep learning
+              models are trained on data that may contain biases, and these biases can be reflected and even amplified
+              in the generated content. It can lead to the reinforcement of harmful stereotypes and discrimination. It
+              is crucial to ensure that training data is diverse and representative and to implement techniques to
+              mitigate bias in models (Velayutham at el, 2023).
             </p>
 
             <p>
-              This dialogue demonstrates how KQML and KIF can be used for communication between agents. Alice uses KQML
-              performatives to ask questions and Bob replies with relevant information using KIF expressions within the
-              specified ontology.
-
+              Another ethical issue is related to intellectual property and originality. Because these models are
+              trained on large amounts of existing content, questions arise about the ownership and originality of the
+              results generated. Additionally, generated content may inadvertently replicate or resemble existing works,
+              leading to potential copyright infringement. Establishing clear guidelines for the use of training data
+              and ownership of generated content is essential to addressing these concerns (Liu at el, 2024).
             </p>
 
+            <p>
+              In conclusion, while deep learning models capable of generating new content offer interesting
+              possibilities, they also raise significant ethical questions that need to be addressed. Concerns about
+              intellectual property, bias, and fairness are critical considerations. Addressing these ethical issues
+              requires a multifaceted approach, including the development of responsible AI practices, regulatory
+              frameworks and public awareness.
+            </p>
+
+
+
+            <br></br>
             <p>
 
               <b> References</b>
-            <p>
-              Finin, T., Fritzson, R., McKay, D. & McEntire, R. (1994) KQML- A Language and Protocol for Knowledge and
-              Information Exchange. Available from: https://cdn.aaai.org/Workshops/1994/WS-94-02/WS94-02-007.pdf
-              [Accessed 14 May 2024]
             </p>
             <p>
-              Liu, K., Luo, Y., & Davis, D. (2000). A Multi-Agent Framework for Stock Trading. In Proceedings of
-              Conference on Intelligent Information Processing, 16 th World Computing Conference. Available from:
-              https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=d08b88061fb7154bd92081d744833529fb1ed276
-              [Accessed 14 May 2024]
-
+              Liu, J., Wang, Z., Xie, J. & Pei, L. (2024) From ChatGPT, DALL-E 3 to Sora: How has Generative AI Changed
+              Digital Humanities Research and Services? . Available on https://arxiv.org/abs/2404.18518 [Accessed 11 May
+              2024]
             </p>
+            <p>
+              Velayutham, V., Chhabra, G., Kumar, S., Kumar, A., Raha, S. & Saha, G. C. (2023) Analysis of Deep Learning
+              in Real-World Applications: Challenges and Progress 44(2). DOI: https://doi.org/10.52783/tjjpt.v44.i2.150
             </p>
             <p>
 
             </p>
             <p>
-
-            </p>
-            <p>
-
-            </p>
-            <p>
-
+              Singh, M.P. 1998 Agent Communication Languages: Rethinking the Principles. Available from:
+              https://www.csc2.ncsu.edu/faculty/mpsingh/papers/mas/computer-acl-98.pdf [Accessed 15 May 2024]
             </p>
 
 
